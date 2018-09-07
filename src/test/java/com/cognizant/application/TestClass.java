@@ -2,6 +2,9 @@ package com.cognizant.application;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +14,7 @@ import org.testng.annotations.*;
 public class TestClass {
 	
 protected static WebDriver driver;
+protected static ArrayList al;
 	
 	@BeforeClass
 	public static void setup(){
@@ -24,7 +28,10 @@ protected static WebDriver driver;
 	
 	public String m2(){
 		driver.manage().window().maximize();
+		 al = new ArrayList(Arrays.asList(1,2,3,4));
 		return driver.getTitle();
+		
+		
 	}
 	
 	@Test
